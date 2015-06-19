@@ -4,22 +4,23 @@
 <body>
 	<input id="taxation">
 	<script>
+		// if using multi statements use this one
 		function calcTax(amount){
 			var calculate = 0;
-			if (amount>10,00,000){
+			var tax;
+			if (amount > 1000000){
 				tax = (amount - 1000000)*0.30 + 125000;
-			}
-			
-			else if (amount >500000){
-				tax =(amount - 500000)*0.20+25000;
-			}
-			
-			else if (amount>250000){
+			}else if (amount > 500000){
+				tax =(amount - 500000)*0.20 + 25000;
+			}else if (amount > 250000){
 				tax = (amount - 250000)*0.10;
+				
+			}else{
+				tax = 0;
 			}
-				return tax;
+				return tax ;
 		}
-			var k = clcTax(500000);
+			var k = calcTax(1000000);
 			console.log(k);
 	</script>
 </body>
